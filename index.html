@@ -8,7 +8,9 @@
     <link rel="stylesheet" type="text/css" href="./bulma/css/bulma.min.css">
 </head>
 <body>
-<main class="has-background-light"> <!-- has-background-white-ter -->
+<!--
+<main class="has-background-light"> --> <!-- has-background-white-ter -->
+
     <section class="hero is-primary is-medium p-5 box">
         <div class="container">
             <h1 class="title has-text-white">WELCOME CRUD MySQL | Js</h1>
@@ -31,11 +33,10 @@
     </div>
 </article>
 </div>
+<!-- Columns ajustadas-->
+<div class="columns is-multiline is-centered mt-5"> <!-- DIV  MAIN  COLUMNS RESPONSIVE-->
 
-
-<div class="columns is-mobile is-multiline is-centered mt-5"> <!-- DIV  MAIN  COLUMN-->
-
-        <div class="column">
+        <div class="column is-flex">
             <div class="box">
                 <p class="title is-5 has-text-success">CREATE</p>
                 <p class="has-text-justified">La instrucción <strong class="has-text-success">INSERT</strong> permite insertar nuevos registros en una tabla,
@@ -57,7 +58,7 @@
             </div>
         </div>
 
-        <div class="column">
+        <div class="column is-flex">
             <div class="box">
                 <p class="title is-5 has-text-link">READER</p>
                 <p class="has-text-justified">La instrucción <strong class="has-text-link">SELECT</strong> indica al motor de base de datos <strong class="has-text-link">MySql</strong> que devuelva información de la base de datos como un conjunto de registros.</p><br>
@@ -77,7 +78,7 @@
         </div>
 
 
-        <div class="column">
+        <div class="column is-flex">
             <div class="box">
                 <p class="title is-5 has-text-warning-dark">UPDATE</p>
                 <p class="has-text-justified">La instrucción <strong class="has-text-warning-dark">UPDATE</strong> permite actualizar registros de una tabla. Debemos por lo tanto indicar que registros se quiere actualizar mediante la cláusula <strong class="has-text-warning-dark">WHERE</strong>, y que campos mediante la cláusula <strong class="has-text-warning-dark">SET</strong>, además se deberá indicar que nuevo dato va a guardar cada campo.</p><br>
@@ -97,7 +98,7 @@
             </div>
         </div>
         
-        <div class="column">
+        <div class="column is-flex">
             <div class="box">
                 <p class="title is-5 has-text-danger">DELETE</p>
                 <p class="has-text-justified">La instrucción <strong class="has-text-danger">DELETE</strong> permite eliminar regsitros de una tabla, su sintaxis es simple, puesto que solo debemos indicar que registros deseamos eliminar mediante la cláusula <strong class="has-text-danger">WHERE</strong>.</p><br>
@@ -115,11 +116,13 @@
             </div>
         </div>
 
-</div> <!-- THEN MAIN COLUMN -->
+</div> <!-- THEN MAIN COLUMNS -->
+
 
 <section class="hero is-medium p-3 m-3"></section>
 
-</main>
+<!-- 
+</main> -->
 
 <footer class="footer has-background-primary box">
     <div class="content has-text-centered">
