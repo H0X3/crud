@@ -12,7 +12,7 @@ Minimalista App Web, con multiple opciones, realiza las operaciones basicas
 ![Logo](https://raw.githubusercontent.com/H0X3/crud/main/img/plantilla.PNG)
 
 
-## Tecnology
+## Technologies
 
 - HTML5
 - Framework Bulma
