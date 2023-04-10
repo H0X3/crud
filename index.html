@@ -5,115 +5,154 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CRUD MySql | JavaScript</title>
-    <link rel="stylesheet" type="text/css" href="./bulma/css/bulma.min.css">
+    <link rel="stylesheet" type="text/css" href="./css/bulma.min.css">
+    <link rel="stylesheet" type="text/css" href="./css/theme.css">
 </head>
 <body>
-<!--
-<main class="has-background-light"> --> <!-- has-background-white-ter -->
 
-    <section class="hero is-primary is-medium p-5 box">
-        <div class="container">
-            <h1 class="title has-text-white">WELCOME CRUD MySQL | Js</h1>
-            <h2 class="subtitle has-text-white">Practique One</h2>
-        </div>
-    </section>
-<!--
-<section class="hero is-medium p-4 m-4 is-danger"></section> 
--->
-<div class="container box p-0">
-<article class="message is-warning">
-    <div class="message-header">
-    <p class="has-text-white">C R U D</p>
-    <button class="delete" aria-label="delete"></button>
+<main class="theme-content">
+
+<section class="theme-title p-6 shadow-one has-text-centered">
+    <div class="container">
+        <h1 class="title has-text-white">WELCOME CRUD MySQL | Js</h1>
+        <h2 class="subtitle has-text-white">Practique One</h2>
     </div>
-    <div class="message-body">
-        <p class=""><strong class="subtitle is-6">CRUD</strong> significa <strong>C</strong>reate, <strong>R</strong>ead, <strong>U</strong>pdate and <strong>D</strong>elete, es decir Crear, Leer, Modificar y Eliminar.
+</section>
+
+<section class="hero is-medium p-1 m-1"></section> 
+
+<div class="container box p-0">
+    <article class="message is-warning">
+        <div class="message-header">
+            <p class="is-warning">C R U D</p>
+            <button class="delete" aria-label="delete"></button>
+        </div>
+        <div class="message-body">
+            <p class=""><strong class="subtitle is-6">CRUD</strong> significa <strong>C</strong>reate, <strong>R</strong>ead, <strong>U</strong>pdate and <strong>D</strong>elete, es decir Crear, Leer, Modificar y Eliminar.
             Las operaciones CRUD se suelen utilizar para manipular registros de la base de datos.<br>
             Casi toda aplicación web utiliza las funciones de Añadir, Editar, Ver y Eliminar para gestionar su contenido.</p>
-    </div>
-</article>
+        </div>
+    </article>
 </div>
+
+<div class="container pt-4">
+<div class="columns is-centered">
+<pre class="box has-background-grey"><code class="has-text-white">mysql> show tables;             mysql> select * from estudiantes;
++-----------------+             +----+-----------+----------+
+| Tables_in_alura |             | ID | Apellido  | Nombre   |
++-----------------+             +----+-----------+----------+
+| clases          |             |  1 | Rodriguez | Jose     |
+| estudiantes     |             |  2 | Martinez  | Maria    |
+| matriculas      |             |  3 | Perez     | Pablo    |
++-----------------+             |  4 | Sanchez   | Luisa    |
+                                |  5 | Herrera   | Jhoana   |
+                                |  6 | Figueroa  | Carolina |
+                                |  7 | Figueroa  | Carolina |
+                                +----+-----------+----------+</code></pre>
+</div>
+</div>
+
 <!-- Columns ajustadas-->
 <div class="columns is-multiline is-centered mt-5"> <!-- DIV  MAIN  COLUMNS RESPONSIVE-->
 
         <div class="column is-flex">
-            <div class="box">
-                <p class="title is-5 has-text-success">CREATE</p>
-                <p class="has-text-justified">La instrucción <strong class="has-text-success">INSERT</strong> permite insertar nuevos registros en una tabla,
-                veamos su sintaxis, un ejemplo práctico, la inserción de un registro en la tabla <strong class="has-text-success">Estudiantes</strong>.</p><br>
-                <code class="language-html">
-                INSERT INTO ESTUDIANTES (ID, NOMBRE, APELLIDOS) <br>
-                VALUES (10 , 'Pablo' ,'Hernandez')
-                </code>
-                <div class="field pt-4">
-                        <div class="control">
-                            <input class="input is-success mb-2" type="number" name="age" id="id_alumno" min="1" max="20" step="1">
-                            <input class="input is-success mb-2" type="text" placeholder="Apellido" value="" size="12" maxlength="12">
-                            <input class="input is-success" type="text" placeholder="Nombre" value="" size="12" maxlength="12">
-                            <button class="button is-primary p-4 mt-3">Send</button>
-                            <button class="button is-light p-4 ml-3 mt-3">Clear</button>
-                        </div>
-                    <p class="help is-success">Creacion de un registro</p>
+            <article class="message is-primary">
+
+                <div class="message-header">
+                <p>CREATE</p>
+                <button class="delete" aria-label="delete"></button>
                 </div>
+
+                <div class="message-body">
+                    <p class="has-text-justified">La instrucción <strong class="has-text-success">INSERT</strong> permite insertar nuevos registros en una tabla,
+                        veamos su sintaxis, un ejemplo práctico, la inserción de un registro en la tabla <strong class="has-text-success">Estudiantes</strong>.</p><br>
+                        <code class="language-html">
+                        INSERT INTO ESTUDIANTES (ID, NOMBRE, APELLIDOS) <br>
+                        VALUES (10 , 'Pablo' ,'Hernandez')
+                        </code>
+            <div class="field pt-4">
+                <div class="control">
+                <input class="input is-primary" type="text" placeholder="Apellido" size="12" maxlength="12">
+                <button class="button is-primary p-4 mt-3">Send</button>
+                <button class="button is-light p-4 ml-3 mt-3">Clear</button>
+                </div>
+                <p class="help is-link">Lectura de un registro</p>
             </div>
         </div>
+        </article>
+    </div>
 
         <div class="column is-flex">
-            <div class="box">
-                <p class="title is-5 has-text-link">READER</p>
-                <p class="has-text-justified">La instrucción <strong class="has-text-link">SELECT</strong> indica al motor de base de datos <strong class="has-text-link">MySql</strong> que devuelva información de la base de datos como un conjunto de registros.</p><br>
-                <code>
+                <article class="message is-link">
+                    <div class="message-header">
+                    
+                    <p>READER</p>
+                    <button class="delete" aria-label="delete"></button>
+                    </div>
+
+                    <div class="message-body">
+                    <p class="has-text-justified">La instrucción <strong class="has-text-link">SELECT</strong> indica al motor de base de datos <strong class="has-text-link">MySql</strong> que devuelva información de la base de datos como un conjunto de registros.</p><br>
+                    <code>
                     SELECT APELLIDO, NOMBRE FROM ESTUDIANTES
-                </code>
+                    </code>
                 
                 <div class="field pt-4">
                     <div class="control">
-                    <input class="input is-success" type="text" placeholder="Apellido" size="12" maxlength="12">
+                    <input class="input is-link" type="text" placeholder="Apellido" size="12" maxlength="12">
                     <button class="button is-link p-4 mt-3">Send</button>
                     <button class="button is-light p-4 ml-3 mt-3">Clear</button>
                     </div>
                     <p class="help is-link">Lectura de un registro</p>
                 </div>
             </div>
-        </div>
-
-
-        <div class="column is-flex">
-            <div class="box">
-                <p class="title is-5 has-text-warning-dark">UPDATE</p>
-                <p class="has-text-justified">La instrucción <strong class="has-text-warning-dark">UPDATE</strong> permite actualizar registros de una tabla. Debemos por lo tanto indicar que registros se quiere actualizar mediante la cláusula <strong class="has-text-warning-dark">WHERE</strong>, y que campos mediante la cláusula <strong class="has-text-warning-dark">SET</strong>, además se deberá indicar que nuevo dato va a guardar cada campo.</p><br>
-
-                <code>
-                    UPDATE ESTUDIANTES SET APELLIDO = 'Martinez'<br>WHERE ID = 1
-                </code>
-
-                <div class="field pt-4">
-                    <div class="control">
-                    <input class="input is-success" type="text" placeholder="Nombre" size="12" maxlength="12">
-                    <button class="button is-warning p-4 mt-3">Send</button>
-                    <button class="button is-light p-4 ml-3 mt-3">Clear</button>
-                    </div>
-                    <p class="help has-text-warning-dark">Actualizacion de un registro</p>
-                </div>
-            </div>
+            </article>
         </div>
         
+        
         <div class="column is-flex">
-            <div class="box">
-                <p class="title is-5 has-text-danger">DELETE</p>
-                <p class="has-text-justified">La instrucción <strong class="has-text-danger">DELETE</strong> permite eliminar regsitros de una tabla, su sintaxis es simple, puesto que solo debemos indicar que registros deseamos eliminar mediante la cláusula <strong class="has-text-danger">WHERE</strong>.</p><br>
+            <article class="message is-warning">
+                <div class="message-header">
+                    <p>UPDATE</p>
+                    <button class="delete" aria-label="delete"></button>
+                </div>
+                <div class="message-body">
+                <p class="has-text-justified">La instrucción <strong>UPDATE</strong> permite actualizar registros de una tabla. Debemos por lo tanto indicar que registros se quiere actualizar mediante la cláusula <strong>WHERE</strong>, y que campos mediante la cláusula <strong>SET</strong>, además se deberá indicar que nuevo dato va a guardar cada campo.</p><br>
+                    <code>
+                        UPDATE ESTUDIANTES SET APELLIDO = 'Martinez'<br>WHERE ID = 1
+                    </code>
+                    <div class="field pt-4">
+                        <div class="control">
+                        <input class="input is-warning" type="text" placeholder="Apellido">
+                        <button class="button is-warning p-4 mt-3">Send</button>
+                        <button class="button is-light p-4 ml-3 mt-3">Clear</button>
+                        </div>
+                        <p class="help is-grey-dark">Eliminacion de un registro</p>
+                    </div>
+                </div>
+            </article>
+            </div>
 
+        
+        <div class="column is-flex">
+        <article class="message is-danger">
+            <div class="message-header">
+                <p>DELETE</p>
+                <button class="delete" aria-label="delete"></button>
+            </div>
+            
+            <div class="message-body">
+                <p class="has-text-justified">La instrucción <strong>DELETE</strong> permite eliminar registros de una tabla, su sintaxis es simple, puesto que solo debemos indicar que registros deseamos eliminar mediante la cláusula <strong>WHERE</strong>.</p><br>
                 <code>DELETE FROM ESTUDIANTES WHERE APELLIDO = 'Perez'</code>
-
                 <div class="field pt-4">
                     <div class="control">
-                    <input class="input is-success" type="text" placeholder="Apellido">
+                    <input class="input is-danger" type="text" placeholder="Apellido">
                     <button class="button is-danger p-4 mt-3">Send</button>
                     <button class="button is-light p-4 ml-3 mt-3">Clear</button>
                     </div>
                     <p class="help is-danger">Eliminacion de un registro</p>
                 </div>
             </div>
+        </article>
         </div>
 
 </div> <!-- THEN MAIN COLUMNS -->
@@ -121,10 +160,8 @@
 
 <section class="hero is-medium p-3 m-3"></section>
 
-<!-- 
-</main> -->
 
-<footer class="footer has-background-primary box">
+<footer class="footer theme-footer box">
     <div class="content has-text-centered">
         <p class="has-text-white">
             <strong class="has-text-white">CRUD</strong>
@@ -134,6 +171,9 @@
         </p>
     </div>
 </footer>
+
+
+</main>
 
 </body>
 </html>
